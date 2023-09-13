@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import { MdOutlineNightlight } from "react-icons/Md";
+import { TiWeatherNight } from "react-icons/ti";
 import { WiDaySunny } from "react-icons/wi";
-
 import { BsPlusSquareFill } from "react-icons/bs";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { nanoid } from "nanoid";
@@ -19,7 +18,7 @@ const Todo = ({ changeTheme, darkMode }) => {
   const lenggthDiv = useRef();
   const onlyActive = useRef();
   const allBtn = useRef();
-  const [    ] = useAutoAnimate();
+  const [] = useAutoAnimate();
   const allLiRef = useRef([]);
 
   const onDragEnd = (result) => {
@@ -43,7 +42,6 @@ const Todo = ({ changeTheme, darkMode }) => {
   }
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
-    
   }, [todos]);
 
   const createTodo = (e) => {
@@ -169,7 +167,7 @@ const Todo = ({ changeTheme, darkMode }) => {
                 {darkMode ? (
                   <WiDaySunny className="text-[#fff] text-[20px] cursor-pointer" />
                 ) : (
-                  <MdOutlineNightlight className="text-[#fff] text-[25px] cursor-pointer" />
+                  <TiWeatherNight className="text-[#fff] text-[25px] cursor-pointer" />
                 )}
               </div>
             </div>
@@ -245,8 +243,10 @@ const Todo = ({ changeTheme, darkMode }) => {
                   <div ref={lenggthDiv} className="">
                     Items : {todos.length}
                   </div>
-                  <div className="actions flex justify-center items-center gap-[10px] capitalize md:absolute md:bottom-[-60px] 
-                  md:left-0 md:right-0 md:bg-[--bgColor] md:border-[1px] md:border-[--borderColor]">
+                  <div
+                    className="actions flex justify-center items-center gap-[10px] capitalize md:absolute md:bottom-[-60px] 
+                  md:left-0 md:right-0 md:bg-[--bgColor] md:border-[1px] md:border-[--borderColor]"
+                  >
                     <p
                       ref={allBtn}
                       onClick={handleShowAll}
