@@ -13,6 +13,7 @@ body,
 html {
     overflow-x: hidden;
     min-height: 100vh;
+    background-color: var(--bgColor);
 }
 
 body.dark-mode,
